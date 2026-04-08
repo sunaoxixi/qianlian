@@ -244,7 +244,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public <T> Result<T> handleException(Exception e) throws Exception {
+    public <T> Result<T> handleException(Exception e) {
         log.error("unknown exception", e);
         return Result.failed(e.getLocalizedMessage());
     }
