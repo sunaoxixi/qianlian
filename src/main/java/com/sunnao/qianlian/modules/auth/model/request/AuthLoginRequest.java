@@ -1,4 +1,4 @@
-package com.sunnao.qianlian.modules.user.model.request;
+package com.sunnao.qianlian.modules.auth.model.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserCreateRequest {
+public class AuthLoginRequest {
 
     /**
      * 用户邮箱
@@ -15,11 +15,6 @@ public class UserCreateRequest {
     @Email(message = "邮箱格式不正确")
     @NotBlank(message = "邮箱不能为空")
     private String email;
-
-    /**
-     * 用户昵称
-     */
-    private String nickname;
 
     /**
      * 用户密码
