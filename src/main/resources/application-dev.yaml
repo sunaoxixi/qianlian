@@ -1,0 +1,3 @@
+mybatis-flex:
+  global-config:
+    print-banner: false
