@@ -3,6 +3,8 @@ package com.sunnao.qianlian.common.constant.enums;
 import com.sunnao.qianlian.common.base.IBaseEnum;
 import lombok.Getter;
 
+import java.util.Arrays;
+
 @Getter
 public enum RoleEnum implements IBaseEnum<Integer> {
 
@@ -26,4 +28,18 @@ public enum RoleEnum implements IBaseEnum<Integer> {
     public static Integer getDefaultRoleCode() {
         return USER.code;
     }
+
+    /**
+     * 根据角色code获取角色desc
+     *
+     * @param code 角色code
+     */
+    public static String getRoleDescByCode(Integer code) {
+        return Arrays.stream(RoleEnum.values())
+                .filter(role -> role.getCode().equals(code))
+                .map(RoleEnum::getDesc)
+                .findFirst()
+                .orElse(null);
+    }
+
 }

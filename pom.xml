@@ -20,6 +20,7 @@
         <java.version>25</java.version>
         <mybatis-flex.version>1.11.6</mybatis-flex.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
+        <satoken.version>1.45.0</satoken.version>
     </properties>
 
     <dependencyManagement>
@@ -77,6 +78,33 @@
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>${org.mapstruct.version}</version>
+        </dependency>
+
+        <!-- Sa-Token 权限认证，在线文档：https://sa-token.cc -->
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-spring-boot3-starter</artifactId>
+            <version>${satoken.version}</version>
+        </dependency>
+
+        <!-- Sa-Token 整合 RedisTemplate -->
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-redis-template</artifactId>
+            <version>${satoken.version}</version>
+        </dependency>
+
+        <!-- 提供 Redis 连接池 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
+        <!-- Sa-Token 整合 Fastjson2 -->
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-fastjson2</artifactId>
+            <version>${satoken.version}</version>
         </dependency>
 
         <dependency>

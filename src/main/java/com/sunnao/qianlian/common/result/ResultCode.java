@@ -77,7 +77,7 @@ public enum ResultCode implements IResultCode, Serializable {
      */
     USER_LOGIN_EXCEPTION("A0200", "用户登录异常"),
     EMAIL_NOT_FOUND("A0201", "邮箱不存在"),
-    EMAIL_FROZEN("A0202", "邮箱被冻结"),
+    EMAIL_FROZEN("A0202", "邮箱被禁用"),
     EMAIL_PASSWORD_ERROR("A0210", "邮箱或密码错误"),
 
     /**

@@ -72,4 +72,14 @@ public class UserEntity extends BaseEntity {
             status = StatusEnum.getDefaultStatusCode();
         }
     }
+
+    /**
+     * 密码是否匹配
+     *
+     * @param password 带匹配密码
+     * @return 匹配结果
+     */
+    public boolean matchPassword(String password) {
+        return this.password.equals(SecureUtil.md5(password));
+    }
 }
