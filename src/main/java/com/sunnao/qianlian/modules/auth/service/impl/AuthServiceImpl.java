@@ -3,7 +3,6 @@ package com.sunnao.qianlian.modules.auth.service.impl;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
-import com.sunnao.qianlian.common.constant.enums.StatusEnum;
 import com.sunnao.qianlian.common.exception.BusinessException;
 import com.sunnao.qianlian.common.result.ResultCode;
 import com.sunnao.qianlian.modules.auth.converter.AuthConverter;
@@ -34,7 +33,7 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public boolean register(AuthRegisterRequest authRegisterRequest) {
         if (!StrUtil.equals(authRegisterRequest.getPassword(), authRegisterRequest.getConfirmPassword())) {
-            throw new BusinessException(ResultCode.USER_REGISTRATION_ERROR, "两次输入的密码不一致");
+            throw new BusinessException(ResultCode.USER_REGISTRATION_ERROR);
         }
         if (userService.checkEmailExists(authRegisterRequest.getEmail())) {
             throw new BusinessException(ResultCode.EMAIL_ALREADY_EXISTS);
@@ -55,7 +54,8 @@ public class AuthServiceImpl implements AuthService {
         if (ObjectUtil.isNull(userEntity)) {
             throw new BusinessException(ResultCode.EMAIL_NOT_FOUND);
         }
-        if (!StatusEnum.ENABLE.getCode().equals(userEntity.getStatus())) {
+        // 检查用户是否被禁用
+        if (userEntity.isDisabled()) {
             throw new BusinessException(ResultCode.EMAIL_FROZEN);
         }
         if (!userEntity.matchPassword(authLoginRequest.getPassword())) {

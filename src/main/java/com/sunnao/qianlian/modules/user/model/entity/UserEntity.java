@@ -82,4 +82,14 @@ public class UserEntity extends BaseEntity {
     public boolean matchPassword(String password) {
         return this.password.equals(SecureUtil.md5(password));
     }
+
+    /**
+     * 是否被禁用
+     *
+     * @return 是否被禁用
+     */
+    public boolean isDisabled() {
+        return !StatusEnum.ENABLE.getCode().equals(status);
+    }
+
 }

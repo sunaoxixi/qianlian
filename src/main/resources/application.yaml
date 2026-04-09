@@ -2,4 +2,4 @@ spring:
   application:
     name: qianlian
   profiles:
-    active: ${ENV}
+    active: dev
