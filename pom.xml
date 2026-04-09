@@ -21,6 +21,7 @@
         <mybatis-flex.version>1.11.6</mybatis-flex.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
         <satoken.version>1.45.0</satoken.version>
+        <aliyun.oss.version>0.3.2</aliyun.oss.version>
     </properties>
 
     <dependencyManagement>
@@ -123,6 +124,12 @@
             <artifactId>springboot3-dotenv</artifactId>
             <version>5.1.0</version>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>alibabacloud-oss-v2</artifactId>
+            <version>${aliyun.oss.version}</version>
         </dependency>
     </dependencies>
 
