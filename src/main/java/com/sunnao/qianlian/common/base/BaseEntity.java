@@ -40,12 +40,22 @@ public class BaseEntity implements Serializable {
     private LocalDateTime createTime;
 
     /**
+     * 创建人 ID
+     */
+    private Long createBy;
+
+    /**
      * 更新时间
      */
     @Column(onInsertValue = "now()", onUpdateValue = "now()")
     @JsonInclude(value = JsonInclude.Include.NON_NULL)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateTime;
+
+    /**
+     * 更新人 ID
+     */
+    private Long updateBy;
 
     /**
      * 逻辑删除

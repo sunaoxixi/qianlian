@@ -46,16 +46,6 @@ public class UserEntity extends BaseEntity {
     private Integer status;
 
     /**
-     * 创建人 ID
-     */
-    private Long createBy;
-
-    /**
-     * 更新人 ID
-     */
-    private Long updateBy;
-
-    /**
      * 初始化用户信息（在创建新用户时调用）
      */
     public void init() {

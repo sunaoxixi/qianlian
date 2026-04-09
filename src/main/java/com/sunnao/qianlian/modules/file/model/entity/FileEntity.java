@@ -5,6 +5,12 @@ import com.sunnao.qianlian.common.base.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 文件表
+ * 每次文件上传都会产生一条记录
+ *
+ * @author sunnao
+ */
 @Getter
 @Setter
 @Table("sys_file")
@@ -13,36 +19,26 @@ public class FileEntity extends BaseEntity {
     /**
      * 原始文件名
      */
-    private String fileName;
+    private String name;
 
     /**
-     * OSS对象Key
+     * 路径, 即文件名
      */
-    private String fileKey;
+    private String path;
 
     /**
      * 文件访问URL
      */
-    private String fileUrl;
+    private String url;
 
     /**
      * 文件大小(字节)
      */
-    private Long fileSize;
+    private Long size;
 
     /**
      * MIME类型
      */
-    private String fileType;
-
-    /**
-     * 创建人 ID
-     */
-    private Long createBy;
-
-    /**
-     * 更新人 ID
-     */
-    private Long updateBy;
+    private String type;
 
 }

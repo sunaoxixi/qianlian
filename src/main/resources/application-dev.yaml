@@ -36,3 +36,11 @@ oss:
     access-key-secret: ${ALIYUN_OSS_ACCESS_KEY_SECRET}
     bucket-name: ${ALIYUN_OSS_BUCKET_NAME}
     region: ${ALIYUN_OSS_REGION}
+
+langchain4j:
+  open-ai:
+    chat-model:
+      base-url: ${OPEN_AI_CHAT_MODEL_BASE_URL}
+      api-key: ${OPEN_AI_CHAT_MODEL_API_KEY}
+
+

@@ -15,21 +15,21 @@ public class FileUploadResponse {
     /**
      * 原始文件名
      */
-    private String fileName;
+    private String name;
 
     /**
      * 文件访问URL
      */
-    private String fileUrl;
+    private String url;
 
     /**
      * 文件大小(字节)
      */
-    private Long fileSize;
+    private Long size;
 
     /**
      * MIME类型
      */
-    private String fileType;
+    private String type;
 
 }

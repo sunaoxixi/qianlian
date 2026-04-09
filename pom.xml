@@ -131,6 +131,12 @@
             <artifactId>alibabacloud-oss-v2</artifactId>
             <version>${aliyun.oss.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-open-ai-spring-boot-starter</artifactId>
+            <version>1.12.2-beta22</version>
+        </dependency>
     </dependencies>
 
     <build>

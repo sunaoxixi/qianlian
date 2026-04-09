@@ -72,10 +72,10 @@ public class AliyunOssClient {
                 + ".aliyuncs.com/" + key;
     }
 
-    public DeleteObjectResult deleteObject(String key) {
+    public void deleteObject(String key) {
         validateObjectKey(key);
         try {
-            return client.deleteObject(DeleteObjectRequest.newBuilder()
+            client.deleteObject(DeleteObjectRequest.newBuilder()
                     .bucket(aliyunOssProperties.getBucketName())
                     .key(key)
                     .build());
